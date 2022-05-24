@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="empleados" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="350e7f08-2144-45c0-9853-f01861de83d4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     empleados."nombre" AS empleados_nombre,
+     empleados."apellidop" AS empleados_apellidop,
+     empleados."apellidom" AS empleados_apellidom,
+     empleados."telefono" AS empleados_telefono,
+     empleados."domicilio" AS empleados_domicilio,
+     empleados."area" AS empleados_area
+FROM
+     "pasteleria"."empleados" empleados]]>
+	</queryString>
+	<field name="empleados_nombre" class="java.lang.String"/>
+	<field name="empleados_apellidop" class="java.lang.String"/>
+	<field name="empleados_apellidom" class="java.lang.String"/>
+	<field name="empleados_telefono" class="java.lang.String"/>
+	<field name="empleados_domicilio" class="java.lang.String"/>
+	<field name="empleados_area" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="b0902498-4cac-4fd3-b310-62303244df29" x="472" y="59" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="203acea3-10ca-4a2c-8a9f-a8830bffc452" x="0" y="0" width="179" height="79"/>
+				<imageExpression><![CDATA["C:\\Users\\romer\\Downloads\\icon.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="5b38abab-4213-437f-949e-6dbbb591b330" x="208" y="28" width="249" height="51"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Registro de empleados]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d3d90cf7-200b-45fc-badd-01aaf51a3696" x="0" y="0" width="56" height="20"/>
+				<textElement/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="815cf432-90bc-4adb-b1be-45a27a00efa7" x="56" y="0" width="108" height="20"/>
+				<textElement/>
+				<text><![CDATA[APELLIDO PATERNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4d00fbd8-dc1f-4be8-ae09-63f46d19cae4" x="164" y="0" width="109" height="20"/>
+				<textElement/>
+				<text><![CDATA[APELLIDO MATERNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0abeff8c-a99c-464a-9e47-8ee505bd000e" x="287" y="0" width="83" height="20"/>
+				<textElement/>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b95f36df-62a6-430a-8ea5-fa27cfa319bb" x="400" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[DOMICILIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f44eff48-3c39-4a5b-b18f-29253f7efa10" x="500" y="0" width="72" height="20"/>
+				<textElement/>
+				<text><![CDATA[AREA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="e9e9f7e6-3ff4-4000-a425-2244a5720392" x="0" y="0" width="56" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{empleados_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a6cd1909-8277-44d7-abb0-0d79a478843a" x="56" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{empleados_apellidop}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="448d9618-fc38-4fc4-a09d-45a3b0443a2f" x="164" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{empleados_apellidom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f0b73414-122f-4809-a466-6c49727f3f87" x="287" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{empleados_telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ff2330fb-4aa8-446d-9e27-24947bb1546a" x="400" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{empleados_domicilio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="17c1cf09-a7fa-4658-a203-556ab024295a" x="500" y="0" width="72" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{empleados_area}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement uuid="5da59d44-5360-44fe-8471-6a1d5ed6eecf" x="207" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="03a4dbda-e1bf-4876-8b99-2619f0ec0a11" x="287" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
